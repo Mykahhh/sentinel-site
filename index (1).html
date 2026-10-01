@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sentinel — Moderation and server protection for Discord</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<meta name="description" content="Sentinel is a Discord bot with a shared global blacklist, AutoMod, raid protection, a honeypot for hacked accounts and anti-nuke.">
+<meta name="theme-color" content="#0a1626">
+<meta property="og:type" content="website"><meta property="og:title" content="Sentinel — Discord moderation and server protection">
+<meta property="og:description" content="One blacklist, every server that opts in. AutoMod, raid protection, honeypot and more.">
+<meta property="og:image" content="https://sentinelsecurity.blog/preview.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://sentinelsecurity.blog/preview.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e8edf2;--panel:#f7f9fb;--ink:#10243a;--mute:#51647a;--line:#c7d2dd;--sig:#3b6de0;--sigtext:#fff;--sigtx:#2f5fd0;--red:#c8372d;--grn:#1f8a5b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#060f1a;--panel:#0d2033;--ink:#e9f0f7;--mute:#9aaec2;--line:#1f3a55;--sigtx:#7fa4f5;--red:#ef6b60;--grn:#4cc58d}}
+:root[data-theme="dark"]{--bg:#060f1a;--panel:#0d2033;--ink:#e9f0f7;--mute:#9aaec2;--line:#1f3a55;--sigtx:#7fa4f5;--red:#ef6b60;--grn:#4cc58d}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Figtree,system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",Georgia,serif;line-height:1.1;margin:0 0 .5em;letter-spacing:-.02em}
+h1{font-size:clamp(2.4rem,6vw,4.2rem);font-weight:800}
+h2{font-size:clamp(1.7rem,3.5vw,2.3rem);font-weight:800;margin-top:1.6em}
+h3{font-size:1.15rem;font-weight:600;margin-top:1.5em}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+header{border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5}
+header .wrap{display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
+.brand{font:800 1.3rem "Bricolage Grotesque",Georgia,serif;text-decoration:none;margin-right:auto;display:flex;align-items:center;gap:9px}
+.brand i{width:14px;height:14px;background:var(--sig);border-radius:50%;box-shadow:0 0 0 4px color-mix(in srgb,var(--sig) 28%,transparent)}
+nav{display:flex;gap:4px;flex-wrap:wrap}
+nav a{padding:6px 12px;border-radius:8px;text-decoration:none;font-weight:500;color:var(--mute)}
+nav a:hover,nav a.on{color:var(--ink);background:var(--panel)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--sig);outline-offset:2px}
+.btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:600;text-decoration:none;background:var(--sig);color:var(--sigtext)}
+.btn.alt{background:transparent;border:1.5px solid var(--ink);color:var(--ink)}
+.page{display:none;padding-bottom:70px}.page.on{display:block}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center;margin-top:28px;padding:64px 48px;border-radius:26px;color:#e6edf4;position:relative;overflow:hidden;background-color:#0a1626;background-image:radial-gradient(circle at 92% 0%,rgba(59,109,224,.32),transparent 45%),linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:auto,38px 38px,38px 38px}
+.hero h1{font-size:clamp(2.6rem,6.4vw,4.8rem)}
+.hero p{font-size:1.15rem;color:#9fb2c6;max-width:34em}
+.hero code{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18)}
+.hero .btn.alt{border-color:#e6edf4;color:#e6edf4}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.feed{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:16px;font-size:.92rem;backdrop-filter:blur(6px);box-shadow:0 20px 60px rgba(0,0,0,.45);min-height:330px}
+.feed .m{border-left:4px solid #ef6b60;padding:8px 12px;margin-top:10px;background:rgba(0,0,0,.28);border-radius:0 8px 8px 0}
+.feed .m.g{border-color:var(--sig)}.feed .m.ok{border-color:#4cc58d}.feed .m.bl{border-color:#5aa9ff}
+.feed b{display:block}.feed small{color:#8ea3b8}
+.feed .top{font-weight:600;color:#9fb2c6;font-size:.8rem;display:flex;align-items:center;gap:8px}.feed .top::before{content:'';width:8px;height:8px;border-radius:50%;background:#4cc58d;box-shadow:0 0 0 0 rgba(76,197,141,.6);animation:pulse 2s infinite}@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(76,197,141,0)}100%{box-shadow:0 0 0 0 rgba(76,197,141,0)}}
+.feat{display:grid;grid-template-columns:200px 1fr;gap:6px 36px;border-top:1px solid var(--line);padding:22px 0}
+.feat h3{margin:0}.feat p{margin:0;color:var(--mute)}
+ol.steps{padding-left:1.3em}ol.steps li{margin:.6em 0}
+.cmds{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px}
+.cmds h3{margin-top:0}
+code{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.88em}
+.cmds p{margin:.4em 0;color:#9fb2c6}.cmds p code{color:#e6edf4;background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16)}
+.doc{max-width:720px}.doc p,.doc li{color:var(--ink)}.doc .meta{color:var(--mute)}
+.note{border-left:4px solid var(--sig);background:var(--panel);padding:10px 16px;border-radius:0 8px 8px 0;margin:18px 0}
+input#q{width:100%;max-width:420px;margin:6px 0 24px;padding:12px 16px;border-radius:12px;border:1.5px solid var(--line);background:var(--panel);color:var(--ink);font:inherit}
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.tile{grid-column:span 2;background:#0a1626;color:#e6edf4;border-radius:20px;padding:26px;border:1px solid #1d3550;transition:transform .2s,border-color .2s,box-shadow .2s}
+.tile.w{grid-column:span 3}.tile.x{grid-column:span 6;display:grid;grid-template-columns:auto 1fr;gap:0 22px;align-items:center}
+.tile:hover{transform:translateY(-4px);border-color:var(--sig);box-shadow:0 14px 40px rgba(59,109,224,.16)}
+.tile .ic{width:46px;height:46px;border-radius:12px;background:rgba(59,109,224,.14);display:grid;place-items:center;font-size:1.4rem;margin-bottom:14px}
+.tile.x .ic{margin:0;grid-row:span 2}
+.tile h3{margin:0 0 .35em;color:#fff}.tile p{margin:0;color:#9fb2c6}.tile code{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18)}
+.steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.steps3>div{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px}
+.steps3 .n{font:800 2.8rem/1 "Bricolage Grotesque",Georgia,serif;color:var(--sigtx);display:block;margin-bottom:8px}
+.term{background:#0a1626;border:1px solid #1d3550;border-radius:16px;overflow:hidden;margin-top:22px}
+.term .bar{display:flex;gap:7px;padding:12px 14px;border-bottom:1px solid #1d3550}.term .bar i{width:11px;height:11px;border-radius:50%;background:#2a4562}
+.term pre{margin:0;padding:18px 20px;color:#cfe0f0;font:500 .95rem/1.7 ui-monospace,Consolas,monospace;min-height:200px;white-space:pre-wrap}
+.term pre::after{content:"▌";color:var(--sig);animation:bl 1s steps(1) infinite}@keyframes bl{50%{opacity:0}}
+.cmds>div{background:#0a1626;color:#e6edf4;border-radius:16px;padding:22px;border:1px solid #1d3550}
+.cmds h3{color:#fff}.cmds code{cursor:pointer}
+body{background-image:radial-gradient(900px 520px at 88% -8%,rgba(59,109,224,.11),transparent 60%);background-attachment:fixed}
+#theme{background:transparent;border:1.5px solid var(--line);color:var(--ink);border-radius:10px;width:40px;height:40px;cursor:pointer;font-size:1.05rem}
+.hero>*{position:relative;z-index:1}
+.hero::after{content:"";position:absolute;right:-160px;bottom:-220px;width:600px;height:600px;border-radius:50%;pointer-events:none;background:conic-gradient(from 0deg,rgba(59,109,224,.3),transparent 26%),repeating-radial-gradient(circle,transparent 0 46px,rgba(255,255,255,.07) 47px 48px);animation:sweep 6s linear infinite}
+@keyframes sweep{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.hero::after{animation:none}}
+.tile{position:relative;overflow:hidden}.tile>*{position:relative}
+.tile::before{content:"";position:absolute;inset:0;background:radial-gradient(280px circle at var(--mx,50%) var(--my,0%),rgba(59,109,224,.2),transparent 60%);opacity:0;transition:opacity .25s;pointer-events:none}
+.tile:hover::before{opacity:1}
+.sim{background:#0a1626;border:1px solid #1d3550;border-radius:18px;padding:22px;color:#e6edf4}
+.simbar{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:16px;color:#9fb2c6}
+.simbar .btn{border:0;cursor:pointer;font:inherit;font-weight:600}.btn:disabled{opacity:.5;cursor:default}
+.simlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px;min-height:64px}
+.j{display:flex;justify-content:space-between;gap:8px;padding:8px 12px;border-radius:8px;background:rgba(59,109,224,.14);border:1px solid rgba(59,109,224,.45);font-size:.9rem;transition:background .25s,border-color .25s}
+.j em{font-style:normal;color:#7fa4f5;font-size:.8rem}
+.j.out{background:rgba(239,107,96,.13);border-color:rgba(239,107,96,.5);color:#9fb2c6}.j.out span{text-decoration:line-through}.j.out em{color:#ef6b60}
+.net{background:#0a1626;border:1px solid #1d3550;border-radius:18px;overflow:hidden}
+.net canvas{display:block;width:100%;height:340px;cursor:pointer}
+.netcap{margin:0;padding:12px 18px;color:#9fb2c6;font-size:.9rem;border-top:1px solid #1d3550}
+.logo{display:block;width:34px;height:34px;border-radius:9px}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--mute);font-size:.92rem}
+footer .wrap{display:flex;gap:18px;flex-wrap:wrap}footer a{margin-right:4px}
+@media (max-width:800px){.hero{grid-template-columns:1fr;padding:34px 22px}.feat{grid-template-columns:1fr}.tile,.tile.w,.tile.x{grid-column:span 6}.steps3{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:no-preference){.feed .m{animation:in .5s both}.feed .m:nth-of-type(2){animation-delay:.25s}.feed .m:nth-of-type(3){animation-delay:.5s}@keyframes in{from{opacity:0;transform:translateY(6px)}}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="brand" href="#home"><img class="logo" src="data:image/png;base64,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" alt="" width="34" height="34">Sentinel</a>
+<nav id="nav">
+<a href="#home">Home</a><a href="#commands">Commands</a><a href="#setup">Setup</a><a href="#blacklist">Blacklist policy</a><a href="#privacy">Privacy</a><a href="#terms">Terms</a>
+</nav>
+<button id="theme" aria-label="Switch light or dark theme">◐</button><a class="btn invite" href="#">Add to Discord</a>
+</div></header>
+
+<main class="wrap">
+
+<section class="page" id="home">
+<div class="hero">
+<div>
+<h1>One blacklist. Every server that opts in.</h1>
+<p>Sentinel stops known scammers, raiders and hacked accounts before they do damage. A user removed from one protected server is flagged in all of them. It does nothing until an admin runs <code>/setup</code>.</p>
+<div class="cta"><a class="btn invite" href="#">Add Sentinel to your server</a><a class="btn alt support" href="https://discord.gg/MjwGKTqJ5D">Join the support server</a></div>
+</div>
+<div class="feed" id="feed" aria-label="Example of Sentinel log messages">
+<div class="top">#sentinel-log · example alerts</div>
+<div class="m"><b>Blacklisted user joined</b>Category: Scammer · Case #214<br><small>Action: banned · added by a Sentinel developer, proof saved</small></div>
+<div class="m g"><b>Honeypot triggered</b>Potentially compromised account<br><small>Removed, messages wiped, DM sent with rejoin invite</small></div>
+<div class="m ok"><b>Lockdown ended</b>12 channels restored to their original permissions</div>
+</div>
+</div>
+
+<h2>What it does</h2>
+<div class="bento">
+<div class="tile w"><div class="ic">🚫</div><h3>Global blacklist</h3><p>Only the Sentinel developers can blacklist. Every entry has a category, reason and saved proof, and users can appeal. You pick ban, kick or alert, and can whitelist people in your own server.</p></div>
+<div class="tile w"><div class="ic">🪤</div><h3>Honeypot</h3><p>A trap channel for hacked accounts. Whoever posts there is removed, their recent messages are wiped, and they get a DM on how to secure their account. Scam links caught are blocked across protected servers.</p></div>
+<div class="tile"><div class="ic">🚨</div><h3>Raid and AutoMod</h3><p>Anti-raid, new-account filter, and invite, spam, mention, caps, link and emoji rules. All off until you turn them on.</p></div>
+<div class="tile"><div class="ic">🔒</div><h3>Lockdown</h3><p>Lock a channel or the whole server, then restore the original permissions exactly. Plus ban, warn, timeout and purge.</p></div>
+<div class="tile"><div class="ic">🛡️</div><h3>Security tools</h3><p><code>/security audit</code> grades you A to F, <code>/drill</code> simulates a raid, and <code>/threat</code> scores any account 0-100.</p></div>
+<div class="tile x"><div class="ic">🎮</div><h3>Roblox and ER:LC</h3><p>Verify accounts with a code in the Roblox bio, pull risk reports, and get alerted when a blacklisted player joins your ER:LC server in-game.</p></div>
+</div>
+
+<h2>One ban reaches every server</h2>
+<div class="net"><canvas id="net" aria-label="Network of Discord servers. A ban in one spreads to all of them."></canvas><p class="netcap">Each dot is a server that opted in. Click one to ban a scammer there and watch the blacklist spread. Example network.</p></div>
+
+<h2>Watch it stop a raid</h2>
+<div class="sim"><div class="simbar"><button class="btn" id="raid">Simulate a raid</button><span id="simstat" aria-live="polite">Quiet. Nobody is joining.</span></div><div class="simlist" id="simlist"></div></div>
+
+<h2>Start in three steps</h2>
+<div class="steps3">
+<div><span class="n">1</span><b>Add Sentinel</b><br>Keep its role above the roles it should moderate.</div>
+<div><span class="n">2</span><b>Run /setup</b><br>One panel holds every setting. Nothing happens until you do.</div>
+<div><span class="n">3</span><b>Scan now</b><br>Check the members you already have against the blacklist.</div>
+</div>
+<div class="term" aria-label="Example of running setup commands"><div class="bar"><i></i><i></i><i></i></div><pre id="term"></pre></div>
+<div class="cta"><a class="btn invite" href="#">Add Sentinel to your server</a><a class="btn alt support" href="https://discord.gg/MjwGKTqJ5D">Join the support server</a></div>
+</section>
+
+<section class="page" id="commands">
+<h1>Commands</h1>
+<p class="doc meta">Admin means Manage Server. Staff means Ban Members or Manage Server. Run <code>/command info</code> in Discord for the same guide.</p>
+<input id="q" type="search" placeholder="Search commands, like ban or lock" aria-label="Search commands">
+<div class="cmds">
+<div><h3>Setup (admin)</h3><p><code>/setup</code> settings panel</p><p><code>/scan</code> check current members</p><p><code>/config</code> <code>/automod</code> view settings</p><p><code>/whitelist</code> allow a user in your server</p><p><code>/raidmode</code> manual join lockdown</p><p><code>/verify-channel</code> post a verify button</p></div>
+<div><h3>Moderation</h3><p><code>/ban</code> <code>/unban</code> <code>/tempban</code> <code>/kick</code></p><p><code>/warn</code> <code>/warnings</code> <code>/delwarn</code> <code>/clearwarns</code></p><p><code>/timeout</code> <code>/untimeout</code></p><p><code>/purge</code> <code>/slowmode</code></p></div>
+<div><h3>Lockdown</h3><p><code>/lockdown</code> <code>/unlockdown</code> whole server</p><p><code>/lock</code> <code>/unlock</code> one channel</p><p>Allowed for admins or the lockdown role set in <code>/setup</code>.</p></div>
+<div><h3>Staff lookup</h3><p><code>/blacklist check</code> <code>/blacklist info</code></p><p><code>/threat</code> <code>/trace</code> <code>/alt-check</code></p><p><code>/roblox profile</code> <code>/roblox alts</code> <code>/roblox-lookup</code></p><p><code>/report</code> send someone to the developers</p></div>
+<div><h3>Security (admin)</h3><p><code>/security audit</code> <code>/perms exposure</code></p><p><code>/incident report</code> <code>/drill</code></p><p><code>/erlc connect</code> <code>/erlc status</code></p></div>
+<div><h3>Everyone</h3><p><code>/appeal start</code> <code>/appeal status</code></p><p><code>/verify</code> <code>/unverify</code> <code>/link-check</code></p><p><code>/help</code> <code>/about</code> <code>/stats</code> <code>/ping</code> <code>/status view</code> <code>/invite</code> <code>/support</code></p></div>
+</div>
+<h2>Automatic protection</h2>
+<p class="doc">No commands needed. Turn these on in <code>/setup</code>: the blacklist, anti-raid, new-account filter, chat AutoMod, honeypot, and the shared scam-link feed.</p>
+</section>
+
+<section class="page" id="setup">
+<h1>Setup guide</h1>
+<div class="doc">
+<ol class="steps"><li><b>Invite Sentinel.</b> Use the Add to Discord button and accept the permissions.</li>
+<li><b>Move Sentinel's role up.</b> It can only act on members whose top role is below its own.</li>
+<li><b>Run <code>/setup</code>.</b> Turn on Blacklist protection and pick a log channel. Use the page menu to reach AutoMod, Punishments, Moderation and Lockdown, Honeypot and the Security Log.</li>
+<li><b>Press Scan now.</b> This checks everyone already in the server.</li>
+<li><b>Try <code>/drill</code>.</b> It shows what would happen in a raid and nothing is punished.</li></ol>
+<h3>Permissions it asks for</h3>
+<p>Ban, Kick, Moderate Members, Manage Messages, Manage Channels, Manage Roles, View Channel, Send Messages, Embed Links, Attach Files and Read Message History. Administrator is not required.</p>
+<div class="note">Chat AutoMod and the honeypot read message content, so Sentinel needs the Message Content and Server Members intents.</div>
+<h3>Common problems</h3>
+<p><b>Nothing gets banned.</b> Blacklist protection is off until <code>/setup</code> is run. <b>"Missing permissions".</b> Move Sentinel's role higher. <b>Still stuck?</b> Ask in the <a class="support" href="https://discord.gg/MjwGKTqJ5D">support server</a>.</p>
+</div>
+</section>
+
+<section class="page" id="blacklist">
+<h1>Blacklist policy</h1>
+<div class="doc">
+<p class="meta">How the shared blacklist works. Last updated September 30, 2026.</p>
+<h3>Who can blacklist</h3><p>Only the Sentinel developers. Server owners and staff cannot add entries, but they can send a report with proof through <code>/report</code>, and the developers decide.</p>
+<h3>What gets someone listed</h3><p>Conduct that harms other communities, recorded under one of these categories: Scammer, Raider / Nuker, Harassment, NSFW, Impersonation, Alt Account, Exploiter, or Other. Each entry stores a reason and, where available, proof saved by the developers.</p>
+<h3>What servers see</h3><p>Protected servers see the category, reason, case number and proof link for the user concerned. Each server picks its own action (ban, kick or alert) and which categories it acts on.</p>
+<h3>Temporary and permanent</h3><p>Entries can have an expiry date. Expired entries are removed automatically and users we banned are unbanned.</p>
+<h3>Watchlist</h3><p>The developers can watch an account. Protected servers get an alert when it joins, but nobody is banned for being on it.</p>
+<h3>Appeals</h3><p>Blacklisted users can appeal from the DM they receive or with <code>/appeal start</code>. The developers review each one and reply by DM. After a denial, you can appeal again after 14 days. If an appeal is accepted, the entry is removed and the user is unbanned in servers where Sentinel banned them.</p>
+<h3>Mistakes</h3><p>If you believe an entry is wrong, appeal, or ask a developer in the <a class="support" href="https://discord.gg/MjwGKTqJ5D">support server</a>.</p>
+</div>
+</section>
+
+<section class="page" id="privacy">
+<h1>Privacy policy</h1>
+<div class="doc">
+<p class="meta">Effective September 30, 2026. Draft for legal review before publishing. Operator: the Sentinel developers (two individuals). Contact: the <a class="support" href="https://discord.gg/MjwGKTqJ5D">support server</a>.</p>
+<h3>What we collect</h3>
+<ul><li><b>Discord data:</b> user IDs, usernames, server IDs, channel and role IDs, and account creation dates.</li>
+<li><b>Blacklist data:</b> reasons, categories, proof files, case history, watchlist entries, developer notes, reports and appeals.</li>
+<li><b>Moderation data:</b> warnings, tempbans, channel lock records and server settings.</li>
+<li><b>Honeypot data:</b> when someone posts in a honeypot channel, we save their ID, username and the message text.</li>
+<li><b>Roblox data:</b> the link between a Discord account and a Roblox account, verification codes, and verification attempts. Roblox profile details are read from Roblox's public API when requested.</li>
+<li><b>ER:LC data:</b> if an admin connects a server, its API key and a join-log position.</li>
+<li><b>Scam links:</b> domains posted in honeypot channels or added by the developers.</li></ul>
+<h3>What we read but do not keep</h3><p>AutoMod reads message content to detect spam, invites, links and similar. Messages are not stored, except honeypot catches as described above.</p>
+<h3>How we use it</h3><p>To run the blacklist, enforce server settings, review reports and appeals, detect raids and scams, and keep the bot secure. We do not sell data or use it for advertising.</p>
+<h3>Who sees it</h3><p>Blacklist entries and basic network records (such as whether an account was stopped elsewhere) are shared with servers that use Sentinel. Server names are only visible to the Sentinel developers. Data is processed on our hosting provider's servers and, for Roblox and ER:LC features, sent to those services.</p>
+<h3>How long we keep it</h3><p>Blacklist and case records are kept while the entry is active and for audit history afterward. Honeypot logs keep the latest 500 entries per server. Other data is kept until a server removes Sentinel or you ask us to delete it.</p>
+<h3>Your choices</h3><p>You can unlink your Roblox account with <code>/unverify</code>. To request access to or deletion of your data, join the <a class="support" href="https://discord.gg/MjwGKTqJ5D">support server</a> and message a developer. Blacklist records may be kept where needed to protect other communities or we are required to keep them, and you can appeal an entry at any time.</p>
+<h3>Security</h3><p>We limit access to the database to the Sentinel developers. No system is perfectly secure, and we cannot guarantee absolute security.</p>
+<h3>Children</h3><p>Sentinel is for people 13 and older, the minimum age for Discord. We do not knowingly collect data from younger children.</p>
+<h3>Changes</h3><p>We will update the date above when this policy changes.</p>
+</div>
+</section>
+
+<section class="page" id="terms">
+<h1>Terms of service</h1>
+<div class="doc">
+<p class="meta">Effective September 30, 2026. Draft for legal review before publishing.</p>
+<h3>Using Sentinel</h3><p>By adding or using Sentinel you agree to these terms and to Discord's Terms of Service and Community Guidelines. You must be 13 or older.</p>
+<h3>Server owners and admins</h3><p>You decide what Sentinel does in your server, and you are responsible for those settings and for actions taken by your staff. Do not use Sentinel to harass, discriminate, or break the law.</p>
+<h3>Blacklist and reports</h3><p>Reports must be honest and supported by real evidence. False or abusive reports can lead to being blocked from using Sentinel. The <a href="#blacklist">Blacklist policy</a> explains how entries and appeals work.</p>
+<h3>Things you may not do</h3><ul><li>Abuse, overload or attempt to break Sentinel or its data.</li><li>Collect blacklist data to publish or use outside Sentinel.</li><li>Evade a blacklist or bot ban with alternate accounts.</li></ul>
+<h3>Our right to act</h3><p>We may bot-ban users, remove servers, or end access at any time if these terms are broken or to protect other communities.</p>
+<h3>No guarantees</h3><p>Sentinel is provided as is. Detection is not perfect, so it may miss bad actors or flag someone by mistake. We do not promise uninterrupted service.</p>
+<h3>Liability</h3><p>To the extent the law allows, we are not liable for indirect or consequential losses from using Sentinel, including loss of server data, members, or reputation.</p>
+<h3>Changes and contact</h3><p>We may update these terms and will change the date above. Continued use means you accept them. Questions: ask a developer in the <a class="support" href="https://discord.gg/MjwGKTqJ5D">support server</a>.</p>
+</div>
+</section>
+
+</main>
+
+<footer><div class="wrap">
+<span>© 2026 Sentinel. Not affiliated with Discord or Roblox.</span>
+<span><a href="#privacy">Privacy</a> <a href="#terms">Terms</a> <a href="#blacklist">Blacklist policy</a> <a class="support" href="https://discord.gg/MjwGKTqJ5D">Support</a></span>
+</div></footer>
+
+<script>
+var CLIENT_ID="1554116896603766834";
+var INVITE="https://discord.com/oauth2/authorize?client_id="+CLIENT_ID+"&permissions=1099780189206&scope=bot%20applications.commands";
+document.querySelectorAll(".invite").forEach(function(a){a.href=INVITE});
+function route(){
+  var id=(location.hash||"#home").slice(1);
+  var el=document.getElementById(id);
+  if(!el||!el.classList.contains("page")){id="home"}
+  document.querySelectorAll(".page").forEach(function(p){p.classList.toggle("on",p.id===id)});
+  document.querySelectorAll("#nav a").forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+id)});
+  window.scrollTo(0,0);
+}
+window.addEventListener("hashchange",route);route();
+var EV=[["","Raid detected","9 accounts joined in 8s · kicked · joins locked for 5 min"],["bl","Scam link blocked","Domain on the shared feed · message deleted"],["g","Server hopper flagged","New account joined 3 Sentinel servers in 10 min"],["ok","Fire drill passed","Grade A · nothing was punished"],["","Blacklisted user joined","Category: Raider / Nuker · banned"],["g","Honeypot triggered","Compromised account removed · DM sent"]];
+document.getElementById("q").addEventListener("input",function(){var v=this.value.toLowerCase();document.querySelectorAll(".cmds>div").forEach(function(d){d.style.display=d.textContent.toLowerCase().indexOf(v)>-1?"":"none"})});
+document.querySelectorAll("#commands code").forEach(function(c){c.title="Click to copy";c.addEventListener("click",function(){var t=c.textContent;try{navigator.clipboard.writeText(t)}catch(e){}c.textContent="copied";setTimeout(function(){c.textContent=t},900)})});
+var TL=["/setup","  Blacklist protection is ON","/scan","  Scanned 1,204 members, found 3 blacklisted, handled 3","/drill","  Grade A, nothing was punished  (example output)"],tp=document.getElementById("term");
+(function(){var li=0,ci=0,out="";
+if(matchMedia("(prefers-reduced-motion: reduce)").matches){tp.textContent=TL.map(function(l){return l[0]==="/"?"> "+l:l}).join("\n");return}
+function step(){if(li>=TL.length)return;var l=TL[li];
+if(l[0]==="/"){if(ci<l.length){ci++;tp.textContent=out+"> "+l.slice(0,ci);setTimeout(step,70)}else{out+="> "+l+"\n";li++;ci=0;setTimeout(step,350)}}
+else{out+=l+"\n";tp.textContent=out;li++;setTimeout(step,650)}}
+step()})();
+var th=document.getElementById("theme"),root=document.documentElement;
+try{root.setAttribute("data-theme",localStorage.getItem("snt-theme")||"dark")}catch(e){root.setAttribute("data-theme","dark")}
+th.addEventListener("click",function(){var n=root.getAttribute("data-theme")==="dark"?"light":"dark";root.setAttribute("data-theme",n);try{localStorage.setItem("snt-theme",n)}catch(e){}});
+document.querySelectorAll(".tile").forEach(function(t){t.addEventListener("mousemove",function(e){var r=t.getBoundingClientRect();t.style.setProperty("--mx",(e.clientX-r.left)+"px");t.style.setProperty("--my",(e.clientY-r.top)+"px")})});
+var SN=["nitro_gift_88","raid_acc_4021","free.robux.x","user_73920","claim_now_11","xX_nuke_Xx","alt_9932","promo_bot_5","discord_gift2","raider_0071","newacct_55","spam_hub_3"];
+var rb=document.getElementById("raid"),sl=document.getElementById("simlist"),ss=document.getElementById("simstat");
+function kick(x){x.classList.add("out");x.querySelector("em").textContent="kicked"}
+rb.addEventListener("click",function(){rb.disabled=true;sl.innerHTML="";var n=0,locked=false;ss.textContent="Accounts are joining...";
+var t=setInterval(function(){var d=document.createElement("div");d.className="j";d.innerHTML="<span>"+SN[n]+"</span><em>joined</em>";sl.appendChild(d);n++;
+if(locked)kick(d);
+if(n===6&&!locked){locked=true;ss.textContent="Raid detected: 6 joins in 2 seconds";sl.querySelectorAll(".j").forEach(function(x,k){setTimeout(function(){kick(x)},k*120)})}
+if(n===SN.length){clearInterval(t);setTimeout(function(){ss.textContent=SN.length+" accounts removed. Join lockdown on for 5 minutes.";rb.disabled=false;rb.textContent="Run it again"},1100)}},300)});
+(function(){var cv=document.getElementById("net"),cx=cv.getContext("2d"),RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
+var N=[[.08,.3],[.2,.75],[.3,.25],[.42,.6],[.52,.15],[.62,.8],[.72,.4],[.84,.2],[.9,.7],[.5,.45]],E=[],lit=[],origin=-1,W=0,H=0,last=0;
+N.forEach(function(a,i){N.map(function(b,j){return[j,Math.hypot(a[0]-b[0],(a[1]-b[1])*.6)]}).filter(function(o){return o[0]!==i}).sort(function(x,y){return x[1]-y[1]}).slice(0,3).forEach(function(o){if(!E.some(function(e){return(e[0]===i&&e[1]===o[0])||(e[1]===i&&e[0]===o[0])}))E.push([i,o[0]])})});
+function size(){var d=window.devicePixelRatio||1;W=cv.clientWidth;H=cv.clientHeight;cv.width=W*d;cv.height=H*d;cx.setTransform(d,0,0,d,0,0)}
+function trig(o,t){origin=o;var d=N.map(function(){return -1}),q=[o];d[o]=0;while(q.length){var a=q.shift();E.forEach(function(e){var b=e[0]===a?e[1]:e[1]===a?e[0]:-1;if(b>=0&&d[b]<0){d[b]=d[a]+1;q.push(b)}})}lit=d.map(function(h){return h<0?null:t+h*420});last=t}
+function draw(t){if(document.getElementById("home").classList.contains("on")){
+if(!W)size();if(W){if(!RM&&t-last>5500)trig(Math.floor(Math.random()*N.length),t);cx.clearRect(0,0,W,H);
+E.forEach(function(e){var a=N[e[0]],b=N[e[1]],on=lit[e[0]]&&lit[e[1]]&&t>Math.max(lit[e[0]],lit[e[1]]);cx.strokeStyle=on?"rgba(239,107,96,.75)":"rgba(255,255,255,.13)";cx.lineWidth=on?2:1;cx.beginPath();cx.moveTo(a[0]*W,a[1]*H);cx.lineTo(b[0]*W,b[1]*H);cx.stroke()});
+N.forEach(function(n,i){var x=n[0]*W,y=n[1]*H,l=lit[i]&&t>=lit[i],age=l?t-lit[i]:0;
+if(l&&age<900){cx.strokeStyle="rgba(239,107,96,"+(1-age/900)+")";cx.lineWidth=2;cx.beginPath();cx.arc(x,y,9+age/900*34,0,7);cx.stroke()}
+cx.fillStyle=i===origin&&l?"#6f9bff":l?"#ef6b60":"#9fb2c6";cx.beginPath();cx.arc(x,y,l?8:6,0,7);cx.fill();
+if(i===origin&&l){cx.font="600 12px Figtree,sans-serif";cx.fillStyle="#6f9bff";cx.fillText("ban issued here",Math.min(x+14,W-110),y+4)}})}}
+requestAnimationFrame(draw)}
+cv.addEventListener("click",function(e){var r=cv.getBoundingClientRect(),mx=e.clientX-r.left,my=e.clientY-r.top,best=-1,bd=44;N.forEach(function(n,i){var d=Math.hypot(n[0]*W-mx,n[1]*H-my);if(d<bd){bd=d;best=i}});if(best>=0)trig(best,performance.now())});
+window.addEventListener("resize",function(){W=0});requestAnimationFrame(draw)})();
+var ei=0,feed=document.getElementById("feed");
+if(feed&&!matchMedia("(prefers-reduced-motion: reduce)").matches){setInterval(function(){
+  var e=EV[ei++%EV.length],d=document.createElement("div");d.className="m "+e[0];
+  d.innerHTML="<b>"+e[1]+"</b>"+e[2];feed.appendChild(d);
+  while(feed.querySelectorAll(".m").length>4)feed.querySelector(".m").remove();
+},2600)}
+</script>
+</body>
+</html>
