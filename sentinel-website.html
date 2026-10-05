@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sentinel — Discord security that protects the whole network</title>
+<meta name="description" content="Sentinel stops raids, scams, hacked accounts and nukes in your Discord server — and warns every other server when it catches someone. Free to use.">
+<meta property="og:title" content="Sentinel — Discord security bot">
+<meta property="og:description" content="Stops raids, scams, hacked accounts and nukes. When one server catches someone, every server is ready.">
+<meta name="theme-color" content="#0D1530">
+<link rel="icon" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ───────── settings you might change ───────── */
+  /* The bot fills these in automatically once STATS_GIST_ID is set (see the bottom of this file). */
+
+  :root {
+    --ink: #0D1530;        /* page */
+    --deck: #142046;       /* panels */
+    --rule: #24356A;       /* lines */
+    --shield: #4C7DE0;     /* Sentinel blue (from the logo) */
+    --shield-hi: #79A2F2;
+    --ice: #E6EEFF;        /* main text */
+    --fog: #9AA8D1;        /* quiet text */
+    --alarm: #FF5D5D;      /* threats */
+    --gold: #FFC442;       /* Premium only */
+    --display: "Unbounded", "Arial Black", system-ui, sans-serif;
+    --body: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--ink); color: var(--ice);
+    font: 400 1.0625rem/1.6 var(--body);
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--shield-hi); }
+  :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
+  .wrap { width: min(1120px, 100% - 40px); margin-inline: auto; }
+
+  /* nav */
+  .nav { display: flex; align-items: center; gap: 28px; padding: 22px 0; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ice);
+           font: 700 1.15rem var(--display); letter-spacing: .01em; }
+  .brand img { width: 34px; height: 34px; }
+  .nav nav { display: flex; gap: 24px; margin-left: auto; }
+  .nav nav a { color: var(--fog); text-decoration: none; font-weight: 500; }
+  .nav nav a:hover { color: var(--ice); }
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; border-radius: 12px;
+         font: 600 1rem var(--body); text-decoration: none; border: 2px solid transparent; cursor: pointer; }
+  .btn-main { background: var(--shield); color: #fff; }
+  .btn-main:hover { background: #5A8AEA; }
+  .btn-quiet { border-color: var(--rule); color: var(--ice); }
+  .btn-quiet:hover { border-color: var(--shield); }
+  .nav .btn { padding: 10px 16px; }
+  @media (max-width: 760px) { .nav nav { display: none; } .nav .btn { margin-left: auto; } }
+
+  /* hero */
+  .hero { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; padding: 48px 0 96px; }
+  .hero h1 { font: 800 clamp(2.4rem, 5.6vw, 4.6rem)/1.02 var(--display); letter-spacing: -.02em; margin: 0 0 24px;
+             max-width: 11ch; }
+  .hero p { color: var(--fog); font-size: 1.2rem; max-width: 46ch; margin: 0 0 32px; }
+  .hero .ctas { display: flex; flex-wrap: wrap; gap: 14px; }
+  .hero small { display: block; margin-top: 18px; color: var(--fog); font-size: .95rem; }
+  @media (max-width: 900px) { .hero { grid-template-columns: 1fr; gap: 40px; padding-top: 24px; } }
+
+  /* radar — the one moving thing on the page */
+  .scope { background: var(--deck); border: 1px solid var(--rule); border-radius: 28px; padding: 22px; }
+  .radar { position: relative; aspect-ratio: 1; border-radius: 50%;
+           background:
+             radial-gradient(circle, transparent 0 24%, var(--rule) 24% calc(24% + 1px), transparent 0 49%,
+                             var(--rule) 49% calc(49% + 1px), transparent 0 74%, var(--rule) 74% calc(74% + 1px), transparent 0),
+             linear-gradient(var(--rule), var(--rule)) center / 1px 100% no-repeat,
+             linear-gradient(var(--rule), var(--rule)) center / 100% 1px no-repeat,
+             #101A3C; }
+  .sweep { position: absolute; inset: 0; border-radius: 50%;
+           background: conic-gradient(from 0deg, rgba(76,125,224,.55), rgba(76,125,224,0) 70deg);
+           animation: spin 5s linear infinite; }
+  .radar .core { position: absolute; left: 50%; top: 50%; width: 22%; translate: -50% -50%; }
+  .blip { position: absolute; display: flex; align-items: center; gap: 8px; opacity: 0;
+          animation: catch 5s linear infinite; }
+  .blip.left { flex-direction: row-reverse; translate: -100% 0; }
+  .blip i { width: 12px; height: 12px; border-radius: 50%; background: var(--alarm); flex: none;
+            box-shadow: 0 0 0 6px rgba(255,93,93,.18); }
+  .blip span { background: rgba(13,21,48,.92); border: 1px solid var(--rule); padding: 4px 10px; border-radius: 8px;
+               font-size: .82rem; font-weight: 600; white-space: nowrap; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes catch { 0%, 2% { opacity: 0; } 4% { opacity: 1; } 55% { opacity: 1; } 70%, 100% { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .sweep { animation: none; } .blip { animation: none; opacity: 1; } }
+
+  .readout { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 18px; margin-top: 20px; font-size: .95rem; }
+  .readout div { display: flex; justify-content: space-between; gap: 10px; padding: 8px 2px; border-top: 1px solid var(--rule); }
+  .readout dt { color: var(--fog); }
+  .readout dd { margin: 0; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .status { display: flex; align-items: center; gap: 8px; margin-top: 14px; color: var(--fog); font-size: .9rem; }
+  .status i { width: 9px; height: 9px; border-radius: 50%; background: var(--fog); }
+  .status.on i { background: #3DDC84; } .status.warn i { background: var(--gold); } .status.off i { background: var(--alarm); }
+
+  /* sections */
+  section { padding: 88px 0; border-top: 1px solid var(--rule); }
+  h2 { font: 700 clamp(1.7rem, 3.4vw, 2.6rem)/1.15 var(--display); letter-spacing: -.01em; margin: 0 0 16px; max-width: 22ch; }
+  .lead { color: var(--fog); font-size: 1.15rem; max-width: 60ch; margin: 0 0 48px; }
+
+  /* what happens when… */
+  .cases { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 56px; }
+  .case { padding: 28px 0; border-top: 1px solid var(--rule); }
+  .case h3 { font: 700 1.25rem/1.3 var(--display); margin: 0 0 14px; }
+  .case ul { margin: 0; padding: 0; list-style: none; }
+  .case li { padding: 6px 0 6px 22px; position: relative; color: var(--ice); }
+  .case li::before { content: ""; position: absolute; left: 0; top: .85em; width: 8px; height: 8px; border-radius: 2px;
+                     background: var(--shield); }
+  .lead code, .case code, .faq code, .legal code, .steps code, .premium code { font-family: var(--body); font-weight: 700;
+      background: var(--deck); border: 1px solid var(--rule); padding: 1px 7px; border-radius: 6px; font-size: .92em; }
+  @media (max-width: 760px) { .cases { grid-template-columns: 1fr; } }
+
+  .network { margin-top: 48px; padding: 32px; border-radius: 22px; background: var(--deck); border: 1px solid var(--rule);
+             display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center; }
+  .network img { width: 64px; height: 64px; }
+  .network h3 { font: 700 1.3rem var(--display); margin: 0 0 6px; }
+  .network p { margin: 0; color: var(--fog); max-width: 70ch; }
+  @media (max-width: 600px) { .network { grid-template-columns: 1fr; } }
+
+  /* setup — a real sequence, so it's numbered */
+  .steps { counter-reset: step; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin: 0; padding: 0;
+           list-style: none; }
+  .steps li { counter-increment: step; }
+  .steps li::before { content: counter(step); display: grid; place-items: center; width: 52px; height: 52px; margin-bottom: 18px;
+                      border-radius: 14px; background: var(--shield); color: #fff; font: 800 1.4rem var(--display); }
+  .steps h3 { font: 700 1.15rem var(--display); margin: 0 0 8px; }
+  .steps p { margin: 0; color: var(--fog); }
+  @media (max-width: 760px) { .steps { grid-template-columns: 1fr; } }
+
+  /* premium */
+  .premium { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+  .price { border: 2px solid var(--gold); border-radius: 24px; padding: 32px; }
+  .price .amt { font: 800 3rem/1 var(--display); color: var(--gold); }
+  .price .amt small { font: 500 1rem var(--body); color: var(--fog); }
+  .price ul { margin: 22px 0 0; padding: 0 0 0 20px; }
+  .price li { margin: 6px 0; }
+  .premium .how { color: var(--fog); }
+  @media (max-width: 760px) { .premium { grid-template-columns: 1fr; } }
+
+  /* faq + legal */
+  details { border-top: 1px solid var(--rule); }
+  details:last-of-type { border-bottom: 1px solid var(--rule); }
+  summary { cursor: pointer; padding: 20px 4px; font-weight: 600; font-size: 1.1rem; list-style: none;
+            display: flex; justify-content: space-between; gap: 16px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; font: 700 1.4rem/1 var(--display); color: var(--shield-hi); }
+  details[open] summary::after { content: "–"; }
+  details .body { padding: 0 4px 22px; color: var(--fog); max-width: 72ch; }
+  details .body p { margin: 0 0 12px; }
+  .legal h4 { color: var(--ice); margin: 22px 0 6px; font-size: 1.02rem; }
+  .legal ul { margin: 0 0 12px; padding-left: 20px; }
+  .legal .updated { font-size: .9rem; }
+
+  /* final call + footer */
+  .final { text-align: center; }
+  .final h2 { margin-inline: auto; }
+  .final .ctas { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+  footer { border-top: 1px solid var(--rule); padding: 32px 0 48px; color: var(--fog); font-size: .95rem; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 18px 28px; align-items: center; }
+  footer a { color: var(--fog); }
+  footer .right { margin-left: auto; }
+</style>
+</head>
+<body>
+
+<header class="wrap nav">
+  <a class="brand" href="#top"><img src="data:image/png;base64,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" alt="">Sentinel</a>
+  <nav aria-label="Main">
+    <a href="#protection">Protection</a>
+    <a href="#setup">Setup</a>
+    <a href="#premium">Premium</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <a class="btn btn-main" href="https://discord.com/oauth2/authorize?client_id=1554116896603766834&amp;permissions=8&amp;scope=bot%20applications.commands">Add to Discord</a>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div>
+      <h1>Raids, scams and nukes stop here.</h1>
+      <p>Sentinel guards your Discord server around the clock. When it catches a scammer, raider or hacked account in one server, every other Sentinel server is ready for them.</p>
+      <div class="ctas">
+        <a class="btn btn-main" href="https://discord.com/oauth2/authorize?client_id=1554116896603766834&amp;permissions=8&amp;scope=bot%20applications.commands">Add Sentinel to Discord</a>
+        <a class="btn btn-quiet" href="https://discord.gg/tka6v98cnu">Join the support server</a>
+      </div>
+      <small>Free to use. Set up in about two minutes.</small>
+    </div>
+
+    <div class="scope" aria-label="Live Sentinel network radar">
+      <div class="radar" aria-hidden="true">
+        <div class="sweep"></div>
+        <img class="core" src="data:image/png;base64,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" alt="">
+        <div class="blip left" style="left:70%;top:18%;animation-delay:.45s"><i></i><span>Scam link blocked</span></div>
+        <div class="blip left" style="left:66%;top:63%;animation-delay:1.9s"><i></i><span>Raid stopped: 14 accounts</span></div>
+        <div class="blip" style="left:9%;top:70%;animation-delay:3.2s"><i></i><span>Hacked account quarantined</span></div>
+        <div class="blip" style="left:6%;top:26%;animation-delay:4.4s"><i></i><span>Fake “Discord Staff” renamed</span></div>
+      </div>
+      <dl class="readout" id="readout" hidden>
+        <div><dt>Servers protected</dt><dd data-stat="servers">—</dd></div>
+        <div><dt>Members watched</dt><dd data-stat="members">—</dd></div>
+        <div><dt>People blacklisted</dt><dd data-stat="blacklisted">—</dd></div>
+        <div><dt>Threats stopped</dt><dd data-stat="stopped">—</dd></div>
+      </dl>
+      <p class="status" id="status"><i></i><span>Checking Sentinel's status…</span></p>
+    </div>
+  </div>
+
+  <section id="protection">
+    <div class="wrap">
+      <h2>What Sentinel does when something goes wrong</h2>
+      <p class="lead">Every protection runs on its own. You choose which ones are on with <code>/protection toggle</code>, and Sentinel posts everything it does in your log channel.</p>
+
+      <div class="cases">
+        <div class="case">
+          <h3>Someone's account gets hacked</h3>
+          <ul>
+            <li>Deletes QR codes that steal Discord logins</li>
+            <li>Quarantines anyone posting the same message in 3 channels at once</li>
+            <li>A honeypot channel catches spam bots and wipes their messages</li>
+            <li>Removes leaked tokens, passwords and Roblox cookies</li>
+          </ul>
+        </div>
+        <div class="case">
+          <h3>Raiders show up</h3>
+          <ul>
+            <li>Removes mass joins and locks the door for new ones</li>
+            <li>Spots raid accounts sharing the same picture or name pattern</li>
+            <li>Disconnects voice chat raids</li>
+            <li><code>/panic</code> locks the whole server in one command, and undoes it just as fast</li>
+          </ul>
+        </div>
+        <div class="case">
+          <h3>Someone tries to nuke the server</h3>
+          <ul>
+            <li>Stops mass bans and kicks, and quarantines whoever did it</li>
+            <li>Kicks bots added by people you haven't trusted</li>
+            <li>Takes back Administrator handed out without permission</li>
+            <li>Rebuilds deleted channels, roles and emojis, with daily backups</li>
+          </ul>
+        </div>
+        <div class="case">
+          <h3>You run a Roblox or ER:LC server</h3>
+          <ul>
+            <li><code>/roblox profile</code> shows a full risk report for any Roblox account</li>
+            <li>Finds alts sharing one Roblox account</li>
+            <li>A verify button for new members, like Bloxlink</li>
+            <li>Pings your staff when a blacklisted player joins in-game</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="network">
+        <img src="data:image/png;base64,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" alt="">
+        <div>
+          <h3>One blacklist for every server</h3>
+          <p>When our team blacklists a scammer or raider, they're removed from every server running Sentinel, with proof saved. Anyone blacklisted can appeal, and you can always let a specific person into your own server.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="setup">
+    <div class="wrap">
+      <h2>Protected in three steps</h2>
+      <p class="lead">No dashboard to learn. Everything happens inside Discord.</p>
+      <ol class="steps">
+        <li><h3>Add Sentinel</h3><p>Invite it with the button above, then drag its role near the top of your role list so it can act on everyone below it.</p></li>
+        <li><h3>Run <code>/setup</code></h3><p>Pick a log channel and turn on Blacklist protection. Every other setting is on the same panel.</p></li>
+        <li><h3>Test it with <code>/drill</code></h3><p>Sentinel runs a fake raid, punishes nobody, and grades your setup from A to F with exactly what to fix.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="premium">
+    <div class="wrap premium">
+      <div>
+        <h2>Sentinel Premium</h2>
+        <p class="lead">Every protection stays free. Premium adds the tools you reach for after something goes wrong, and keeps the network running.</p>
+        <p class="how">To upgrade, run <code>/premium info</code> in your server and press the Premium button. Payment is handled by Discord.</p>
+      </div>
+      <div class="price">
+        <div class="amt">$2.99 <small>per month</small></div>
+        <ul>
+          <li><code>/security audit</code> grades your server A to F</li>
+          <li><code>/incident report</code> builds a timeline after an attack</li>
+          <li><code>/backup restore</code> and <code>/backup compare</code></li>
+          <li><code>/perms exposure</code> and <code>/impersonators</code></li>
+          <li><code>/roblox profile</code> and <code>/roblox alts</code></li>
+          <li><code>/modlogs</code>, <code>/keywords</code> and <code>/erlc connect</code></li>
+          <li>Priority support</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2>Questions</h2>
+      <p class="lead">Still stuck? <a href="https://discord.gg/tka6v98cnu">Open a ticket in the support server</a>.</p>
+      <details><summary>Sentinel isn't doing anything in my server</summary>
+        <div class="body"><p>An admin needs to run <code>/setup</code> and turn Blacklist protection on. Nothing runs until then.</p></div></details>
+      <details><summary>I can't see Sentinel's commands</summary>
+        <div class="body"><p>Press Ctrl + R to refresh Discord. You'll only see commands your role is allowed to use. Run <code>/help</code> to browse everything you can use.</p></div></details>
+      <details><summary>Sentinel says it's missing permissions</summary>
+        <div class="body"><p>Go to Server Settings → Roles and drag Sentinel's role near the top. It can only act on people whose highest role is below its own.</p></div></details>
+      <details><summary>Sentinel stopped someone by mistake</summary>
+        <div class="body"><p>The server owner can mark trusted people with <code>/protection trust</code>. Anyone quarantined gets every role back with <code>/unquarantine</code>.</p></div></details>
+      <details><summary>How does someone get blacklisted?</summary>
+        <div class="body"><p>Server staff report people with proof using <code>/report</code>. Only the Sentinel team can approve a blacklist, and every case keeps its evidence.</p></div></details>
+      <details><summary>I was blacklisted. What can I do?</summary>
+        <div class="body"><p>Run <code>/appeal start</code>. It works in DMs too. The team reviews it and messages you with the decision. If it's denied, you can appeal again after 14 days.</p></div></details>
+    </div>
+  </section>
+
+  <section id="legal" class="legal">
+    <div class="wrap">
+      <h2>Terms and privacy</h2>
+      <p class="lead">The short version: Sentinel keeps what it needs to protect servers, and you can see or delete your data with <code>/mydata</code> and <code>/deletedata</code>.</p>
+
+      <details id="terms"><summary>Terms of Service</summary>
+        <div class="body">
+          <p class="updated">Last updated October 5, 2026</p>
+          <p>By adding Sentinel to a server or using its commands, you agree to these terms and to Discord's Terms of Service and Community Guidelines.</p>
+          <h4>Using Sentinel</h4>
+          <ul>
+            <li>Don't use Sentinel to harass people, file false reports, or get around another server's moderation.</li>
+            <li>Server admins are responsible for how Sentinel is set up in their server and for the actions it takes there.</li>
+            <li>Don't try to break, overload or abuse the bot. We may block servers or users who do.</li>
+          </ul>
+          <h4>The blacklist</h4>
+          <ul>
+            <li>Only the Sentinel team can blacklist someone, based on evidence.</li>
+            <li>Anyone who is blacklisted can appeal with <code>/appeal start</code>.</li>
+            <li>Servers can always let specific people in with <code>/whitelist</code>.</li>
+          </ul>
+          <h4>Premium</h4>
+          <ul>
+            <li>Premium is a monthly subscription sold and billed through Discord. Refunds follow Discord's policy.</li>
+            <li>Cancel any time in your Discord settings. Premium tools stop when the subscription ends.</li>
+          </ul>
+          <h4>No guarantees</h4>
+          <p>Sentinel is provided as is. It catches a lot, but no tool stops every attack, and we aren't responsible for damage to your server. We may change or stop features at any time, and we'll post changes in the support server.</p>
+          <p>Questions? Ask in the <a href="https://discord.gg/tka6v98cnu">support server</a>.</p>
+        </div></details>
+
+      <details id="privacy"><summary>Privacy Policy</summary>
+        <div class="body">
+          <p class="updated">Last updated October 5, 2026</p>
+          <h4>What Sentinel stores</h4>
+          <ul>
+            <li><strong>Blacklist records:</strong> Discord user IDs, the reason, category, proof, and a history of each case.</li>
+            <li><strong>Reports and appeals:</strong> who was reported, by which server, and what was written.</li>
+            <li><strong>Moderation:</strong> warnings, timeouts and quarantines made through Sentinel, per server.</li>
+            <li><strong>Roblox verification:</strong> your Roblox username and ID if you verify, and verify attempts.</li>
+            <li><strong>Security logs:</strong> messages caught by protections (like scam links or honeypot posts) and which invite people joined with.</li>
+            <li><strong>Server settings and backups:</strong> each server's setup, plus channel and role layouts and emojis for restoring after a nuke.</li>
+            <li><strong>Support tickets:</strong> transcripts of tickets in our support server.</li>
+          </ul>
+          <h4>What Sentinel doesn't store</h4>
+          <p>Normal chat messages are checked as they're sent and then forgotten. Sentinel doesn't keep message history, DMs, or voice.</p>
+          <h4>How it's used</h4>
+          <p>Only to protect servers: blocking blacklisted people, stopping attacks, and showing server staff what happened. We never sell data or use it for ads.</p>
+          <h4>Who can see it</h4>
+          <p>Server staff see their own server's logs. The Sentinel team sees blacklist cases, reports and appeals. Other servers only see what's needed, like whether someone is blacklisted.</p>
+          <h4>Your choices</h4>
+          <ul>
+            <li><code>/mydata</code> shows what Sentinel has stored about you.</li>
+            <li><code>/deletedata</code> deletes your Roblox link right away and sends a deletion request for the rest. Blacklist records may be kept when they're needed to keep servers safe.</li>
+          </ul>
+          <p>Payments are handled entirely by Discord. Sentinel never sees your card details.</p>
+          <p>Questions about your data? Open a ticket in the <a href="https://discord.gg/tka6v98cnu">support server</a>.</p>
+        </div></details>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <h2>Your server, protected in two minutes</h2>
+      <p class="lead" style="margin-inline:auto">Free to add. Every protection included.</p>
+      <div class="ctas">
+        <a class="btn btn-main" href="https://discord.com/oauth2/authorize?client_id=1554116896603766834&amp;permissions=8&amp;scope=bot%20applications.commands">Add Sentinel to Discord</a>
+        <a class="btn btn-quiet" href="https://discord.gg/tka6v98cnu">Join the support server</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="data:image/png;base64,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" alt="">Sentinel</a>
+    <a href="#terms">Terms</a>
+    <a href="#privacy">Privacy</a>
+    <a href="https://discord.gg/tka6v98cnu">Support</a>
+    <span class="right">Not affiliated with Discord or Roblox.</span>
+  </div>
+</footer>
+
+<script>
+/* ───────── live stats ─────────
+   Paste your Gist ID between the quotes (the long code at the end of the Gist's link).
+   Sentinel updates that Gist every 10 minutes once STATS_GIST_ID + GITHUB_TOKEN are in its .env. */
+const STATS_GIST_ID = "756c0c66fb700d480ea7cb9abdb6e145";
+
+const fmt = n => (typeof n === "number" ? n.toLocaleString() : "—");
+async function loadStats() {
+  const status = document.getElementById("status");
+  const say = (cls, text) => { status.className = "status " + cls; status.querySelector("span").textContent = text; };
+  if (!STATS_GIST_ID) { say("on", "Sentinel is protecting servers right now"); return; }
+  document.getElementById("readout").hidden = false;
+  try {
+    const r = await fetch("https://api.github.com/gists/" + STATS_GIST_ID, { cache: "no-store" });
+    if (!r.ok) throw new Error(r.status);
+    const gist = await r.json();
+    const s = JSON.parse(gist.files["sentinel-stats.json"].content);
+    document.querySelectorAll("[data-stat]").forEach(el => { el.textContent = fmt(s[el.dataset.stat]); });
+    const minutes = (Date.now() / 1000 - (s.updated || 0)) / 60;
+    if (minutes > 30) say("off", "Sentinel hasn't checked in for a while");
+    else if (s.status === "online") say("on", "Online. Updated " + Math.max(1, Math.round(minutes)) + " min ago");
+    else say("warn", (s.status || "Unknown").replace(/^./, c => c.toUpperCase()) + (s.note ? ": " + s.note : ""));
+  } catch (e) {
+    say("warn", "Live stats are unavailable right now");
+  }
+}
+loadStats();
+
+/* open Terms / Privacy when someone follows a #terms or #privacy link */
+function openFromHash() {
+  const el = document.getElementById(location.hash.slice(1));
+  if (el && el.tagName === "DETAILS") { el.open = true; el.scrollIntoView(); }
+}
+window.addEventListener("hashchange", openFromHash);
+openFromHash();
+</script>
+</body>
+</html>
